@@ -13,4 +13,4 @@ RUN \
     rm -f frp_${VERSION}_linux_amd64.tar.gz                                                                                             && \
     apk del tzdata
 ENTRYPOINT ["./frpc"]
-CMD ["-c" "config.toml"]
+CMD ["-c", "config.toml"]
