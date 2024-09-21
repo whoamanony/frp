@@ -7,6 +7,8 @@ RUN \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime                                                                                 && \
     echo "Asia/Shanghai" > /etc/timezone                                                                                                && \
     mkdir -p /frp                                                                                                                       && \
+    wget --no-check-certificate -c https://github.com/gofrp/fp-multiuser/releases/download/v0.0.2/fp-multiuser-linux-amd64              && \
+    mv fp-multiuser-linux-amd64 fp-multiuser && chmod +x fp-multiuser                                                                   && \
     wget --no-check-certificate -c https://github.com/fatedier/frp/releases/download/v${VERSION}/frp_${VERSION}_linux_amd64.tar.gz      && \
     tar zxvf frp_${VERSION}_linux_amd64.tar.gz --strip-components=1                                                                     && \
     cp frpc.toml config.toml                                                                                                            && \
